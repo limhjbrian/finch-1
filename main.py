@@ -1,3 +1,4 @@
+#draw circle
 def circle(length: number, angle: number, speed: number, mode: number):
     if mode == 1:
         for index in range(360 / angle):
@@ -6,10 +7,12 @@ def circle(length: number, angle: number, speed: number, mode: number):
     else:
         finch.start_motors(speed, speed - angle)
 
+#if shake: all tails Red
 def on_gesture_shake():
     finch.set_tail(TailPort.ALL, 100, 0, 0)
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 
+#draw square
 def square(length2: number):
     for index2 in range(3):
         finch.set_move(MoveDir.FORWARD, length2, 50)
