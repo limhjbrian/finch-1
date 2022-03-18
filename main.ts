@@ -14,10 +14,11 @@ input.onGesture(Gesture.Shake, function () {
     finch.setTail(TailPort.All, 100, 0, 0)
 })
 // draw square
-function square (length2: number) {
-    for (let index = 0; index < 3; index++) {
-        finch.setMove(MoveDir.Forward, length2, 50)
-        finch.setTurn(RLDir.Right, 90, 50)
+function square (width: number, height: number, speed: number) {
+    for (let index = 0; index < 4; index++) {
+        finch.setMove(MoveDir.Forward, width, speed)
+        finch.setTurn(RLDir.Right, 90, speed)
+        finch.setMove(MoveDir.Forward, height, speed)
+        finch.setTurn(RLDir.Right, 90, speed)
     }
-    finch.setMove(MoveDir.Forward, length2, 50)
 }
